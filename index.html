@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Informations de base -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portail Gouvernance des Données - TotalEnergies</title>
+  
+  <!-- Police Inter via Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles CSS internes -->
   <style>
+    /* ---------------------- Variables de couleur ---------------------- */
     :root {
       --primary: #e30613;
       --secondary: #0058a6;
@@ -13,8 +19,10 @@
       --text: #1a1a1a;
       --light: #ffffff;
       --gray: #ccc;
+      --main-orange: #ff6a00;
     }
 
+    /* ---------------------- Reset et base ---------------------- */
     * {
       margin: 0;
       padding: 0;
@@ -28,8 +36,71 @@
       line-height: 1.6;
     }
 
+    /* ---------------------- Barre de navigation ---------------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 32px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      background: rgba(227, 6, 19, 0.08);
+      color: var(--primary);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--primary), var(--main-orange));
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+    }
+
+    /* ---------------------- Section Header / Hero ---------------------- */
     header {
-      background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg?rev=90e57401-4079-4b8d-9e2d-443b62bcb728&hash=F06F70A13F68B41EED47B1FDAC52242C') center/cover no-repeat;
+      background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg') center/cover no-repeat;
       height: 100vh;
       color: white;
       display: flex;
@@ -59,9 +130,6 @@
       font-size: 48px;
       font-weight: 700;
       margin-bottom: 20px;
-      color:white;
-      
-      
     }
 
     .hero-content p {
@@ -69,113 +137,7 @@
       margin-bottom: 30px;
     }
 
-    .hero-content a {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .hero-content a:hover {
-      background: #c8000f;
-      
-    }
-
-    .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  z-index: 100;
-}
-
-.nav-wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 12px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-:root {
-  --main-red: #e30613;
-  --main-orange: #ff6a00;
-  --nav-bg: #f8f9fa; /* gris très clair */
-  --nav-text: #222;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--nav-bg);
-  border-bottom: 1px solid #ddd;
-  z-index: 100;
-}
-
-.nav-wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 10px 30px; /* moins haut */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  height: 32px;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu li a {
-  text-decoration: none;
-  color: var(--nav-text);
-  font-weight: 500;
-  font-size: 15px;
-  padding: 6px 10px;
-  border-radius: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu li a:hover {
-  background: rgba(227, 6, 19, 0.08);
-  color: var(--main-red);
-}
-
-.cta-button {
-  background: linear-gradient(135deg, var(--main-red), var(--main-orange));
-  color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15);
-}
-
-.cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
-}
-
-
-
-
+    /* ---------------------- Section Piliers ---------------------- */
     section {
       padding: 80px 40px;
       max-width: 1200px;
@@ -208,224 +170,139 @@
       margin-bottom: 16px;
     }
 
+    /* ---------------------- Section Ressources Clés ---------------------- */
     #ressources {
-  background: #fff;
-  padding: 100px 40px;
-  border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  margin: 60px auto;
-  max-width: 1200px;
-}
-
-#ressources h2 {
-  font-size: 36px;
-  text-align: center;
-  color: var(--primary);
-  margin-bottom: 60px;
-}
+      background: #fff;
+      padding: 100px 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+      margin: 60px auto;
+    }
 
     .shortcuts {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
-    gap: 24px;
-    margin-top: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 40px;
     }
 
     .shortcuts a {
-  flex: 1 1 30%;
-  max-width: 32%;
-  background: linear-gradient(135deg, #e30613, #ff6a00);
-  color: white;
-  padding: 16px 24px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 40px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(227, 6, 19, 0.25), 0 4px 12px rgba(255, 106, 0, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      flex: 1 1 30%;
+      max-width: 32%;
+      background: linear-gradient(135deg, #e30613, #ff6a00);
+      color: white;
+      padding: 16px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 40px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(227, 6, 19, 0.25);
+      transition: 0.3s ease;
+    }
 
-.shortcuts a::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #ff6a00, #e30613);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 40px;
-  z-index: 0;
-}
+    .shortcuts a:hover {
+      transform: translateY(-4px);
+    }
 
-.shortcuts a:hover::before {
-  opacity: 1;
-}
+    /* ---------------------- Section Collibra ---------------------- */
+    #collibra p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
 
-.shortcuts a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(227, 6, 19, 0.3), 0 6px 16px rgba(255, 106, 0, 0.3);
-}
-
-.shortcuts a {
-  position: relative;
-  z-index: 1;
-}
-
-
+    /* ---------------------- Section FAQ ---------------------- */
     .faq-section {
-  padding: 80px 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #f3f6fa 100%);
-}
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f3f6fa 100%);
+    }
 
-.faq-section h2 {
-  text-align: center;
-  color: #e30613;
-  font-size: 36px;
-  margin-bottom: 48px;
-  font-weight: 700;
-}
+    .faq-container {
+      max-width: 960px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
 
-.faq-container {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+    .faq-category {
+      background: #ffffffcc;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
 
-.faq-category {
-  position: relative;
-  background: #ffffffcc;
-  border-radius: 20px;
-  padding: 32px 28px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease;
-  overflow: hidden;
-}
+    .faq-category h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #0058a6, #00a3e0);
+      padding: 6px 16px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
 
-.faq-category::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(135deg, #ff6a00, #e30613);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
+    .faq-item strong {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
 
+    /* ---------------------- Pied de page ---------------------- */
+    .footer {
+      background: linear-gradient(135deg, #ffffff, #f2f6fa);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
 
-.faq-category:hover {
-  transform: translateY(-3px);
-}
-
-.faq-category h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, #0058a6, #00a3e0);
-
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-}
-
-.faq-item strong {
-  display: block;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 6px;
-}
-
-.faq-item p {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.6;
-}
-
-
-
-
-.footer {
-  background: linear-gradient(135deg, #ffffff, #f2f6fa);
-  color: #1a1a1a;
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 500;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(to right, #0058a6, #e30613);
-  border-radius: 6px;
-  opacity: 0.9;
-}
-
-
-
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #0058a6, #e30613);
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-wrapper">
-          <div class="nav-left">
-            <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg" alt="TotalEnergies" class="logo">
-          </div>
-          <ul class="nav-menu">
-            <li><a href="#pillars">Nos Piliers</a></li>
-            <li><a href="#ressources">Ressources</a></li>
-            <li><a href="#collibra">Collibra</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-          <div class="nav-right">
-            <a href="#ressources" class="cta-button">Explorer le catalogue</a>
-          </div>
-        </div>
-      </nav>
-      
-      
-      
+  <!-- ---------------------- Barre de navigation ---------------------- -->
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg" alt="TotalEnergies" class="logo">
+      <ul class="nav-menu">
+        <li><a href="#pillars">Nos Piliers</a></li>
+        <li><a href="#ressources">Ressources</a></li>
+        <li><a href="#collibra">Collibra</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#ressources" class="cta-button">Explorer le catalogue</a>
+    </div>
+  </nav>
 
+  <!-- ---------------------- Header principal ---------------------- -->
   <header>
     <div class="hero-content">
       <h1>Portail Gouvernance des Données</h1>
       <p>Le hub stratégique pour explorer, comprendre et valoriser les données de TotalEnergies</p>
-      
     </div>
   </header>
 
+  <!-- ---------------------- Nos piliers ---------------------- -->
   <section id="pillars">
     <h2>Nos piliers de gouvernance</h2>
     <div class="pillars">
@@ -447,6 +324,7 @@
     </div>
   </section>
 
+  <!-- ---------------------- Raccourcis ressources clés ---------------------- -->
   <section id="ressources">
     <h2>Ressources Clés</h2>
     <div class="shortcuts">
@@ -454,21 +332,24 @@
       <a href="https://layerdata.collibra.com/glossary">Glossaire Métier</a>
       <a href="https://layerdata.collibra.com/policy-manager">Politiques & Règles</a>
       <a href="#">Workflows</a>
+      <a href="https://layerdata.collibra.com/search?filters=advanced" target="_blank">Marketplace Avancé </a>
     </div>
   </section>
-  
 
+  <!-- ---------------------- Description Collibra ---------------------- -->
   <section id="collibra">
     <h2>Collibra chez TotalEnergies</h2>
-    <p style="text-align: center; max-width: 800px; margin: auto;">Collibra est notre plateforme de gouvernance des données qui nous permet de documenter, gouverner, tracer et exploiter toutes les données stratégiques de l'entreprise.</p>
+    <p>Collibra est notre plateforme de gouvernance des données qui nous permet de documenter, gouverner, tracer et exploiter toutes les données stratégiques de l'entreprise.</p>
   </section>
 
+  <!-- ---------------------- Section FAQ ---------------------- -->
   <section class="faq-section" id="faq">
-    <h2 id="faq">Foire aux Questions (FAQ)</h2>
+    <h2>Foire aux Questions (FAQ)</h2>
     <div class="faq-container">
-  
+
+      <!-- Catégorie 1 -->
       <div class="faq-category">
-        <h3> Sur la gouvernance de données</h3>
+        <h3>Sur la gouvernance de données</h3>
         <div class="faq-item">
           <strong>Quelle est la différence entre gouvernance de données et gestion de données ?</strong>
           <p>La gouvernance définit les règles et rôles, tandis que la gestion les applique au quotidien.</p>
@@ -477,14 +358,11 @@
           <strong>Quels sont les rôles clés dans un programme de gouvernance ?</strong>
           <p>Data Owners, Stewards, Custodians, IT, Sécurité, et les équipes Métiers.</p>
         </div>
-        <div class="faq-item">
-          <strong>Comment la gouvernance de données améliore-t-elle la prise de décision ?</strong>
-          <p>En garantissant que les données sont fiables, bien définies et accessibles.</p>
-        </div>
       </div>
-  
+
+      <!-- Catégorie 2 -->
       <div class="faq-category">
-        <h3> Sur l'utilisation de Collibra</h3>
+        <h3>Sur l'utilisation de Collibra</h3>
         <div class="faq-item">
           <strong>À quoi sert Collibra au sein de TotalEnergies ?</strong>
           <p>À centraliser les métadonnées, harmoniser les définitions, suivre la qualité des données.</p>
@@ -494,24 +372,11 @@
           <p>Utilisez la barre de recherche intelligente ou naviguez via les catégories.</p>
         </div>
       </div>
-  
-      
-  
-      <div class="faq-category">
-        <h3> Sur les politiques et la conformité</h3>
-        <div class="faq-item">
-          <strong>Comment Collibra aide-t-il à assurer la conformité (ex: RGPD) ?</strong>
-          <p>En centralisant les règles, en assurant la traçabilité et l’auditabilité des données.</p>
-        </div>
-        <div class="faq-item">
-          <strong>Où consulter les politiques internes ?</strong>
-          <p>Depuis l’onglet “Politiques” ou la bibliothèque documentaire intégrée.</p>
-        </div>
-      </div>
-  
+
     </div>
   </section>
 
+  <!-- ---------------------- Pied de page ---------------------- -->
   <footer class="footer">
     <p>&copy; 2025 TotalEnergies - Gouvernance des Données</p>
   </footer>

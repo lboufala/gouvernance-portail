@@ -1,191 +1,520 @@
-<div style="font-family: Arial, sans-serif; color: #1a1a1a; background: #f9f9f9; padding: 20px; box-sizing: border-box; max-width: 100%; overflow-x: hidden; word-break: break-word;">
-    <style>
-      .cdg-container * {
-        box-sizing: border-box;
-        max-width: 100%;
-      }
-  
-      .cdg-container {
-        max-width: 100%;
-      }
-  
-      .cdg-container h2 {
-        font-size: 24px;
-        color: #e30613;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-  
-      .cdg-container p {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 14px;
-      }
-  
-      .cdg-pillars {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 16px;
-        width: 100%;
-      }
-  
-      .cdg-pillar {
-        background: white;
-        padding: 16px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        text-align: center;
-        word-wrap: break-word;
-      }
-  
-      .cdg-pillar img {
-        height: 50px;
-        margin-bottom: 10px;
-        max-width: 100%;
-      }
-  
-      .cdg-pillar h4 {
-        margin: 10px 0 5px;
-        font-size: 16px;
-        color: #333;
-      }
-  
-      .cdg-shortcuts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: center;
-        margin-top: 30px;
-        width: 100%;
-      }
-  
-      .cdg-shortcuts a {
-        flex: 1 1 40%;
-        min-width: 120px;
-        text-align: center;
-        background: linear-gradient(135deg, #e30613, #ff6a00);
-        color: white;
-        padding: 10px 16px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 13px;
-        word-wrap: break-word;
-      }
-  
-      .cdg-faq {
-        margin-top: 40px;
-      }
-  
-      .cdg-faq-category {
-        background: #fff;
-        padding: 16px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        margin-bottom: 20px;
-      }
-  
-      .cdg-faq-category h3 {
-        font-size: 18px;
-        color: #0058a6;
-        margin-bottom: 10px;
-      }
-  
-      .cdg-faq-item {
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-  
-      .cdg-faq-item strong {
-        display: block;
-        margin-bottom: 4px;
-        color: #000;
-      }
-  
-      .cdg-footer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 12px;
-        color: #666;
-      }
-  
-      @media (max-width: 600px) {
-        .cdg-shortcuts a {
-          flex: 1 1 100%;
-        }
-  
-        .cdg-pillar {
-          padding: 12px;
-        }
-  
-        .cdg-container h2 {
-          font-size: 20px;
-        }
-      }
-    </style>
-  
-    <div class="cdg-container">
-  
-      <!-- Titre -->
-      <h2>Portail Gouvernance des Données</h2>
-      <p>Explorez, comprenez et valorisez les données de TotalEnergies</p>
-  
-      <!-- Piliers -->
-      <div class="cdg-pillars">
-        <div class="cdg-pillar">
-          <img src="https://img.icons8.com/ios-filled/100/database.png" alt="Catalogue">
-          <h4>Catalogue</h4>
-          <p>Accès centralisé à toutes les données de l’entreprise.</p>
-        </div>
-        <div class="cdg-pillar">
-          <img src="https://img.icons8.com/ios-filled/100/checklist.png" alt="Qualité">
-          <h4>Qualité</h4>
-          <p>Données certifiées et surveillées en continu.</p>
-        </div>
-        <div class="cdg-pillar">
-          <img src="https://img.icons8.com/ios-filled/100/user-group-man-man.png" alt="Responsabilités">
-          <h4>Rôles</h4>
-          <p>Clarté des responsabilités avec les Data Owners et Stewards.</p>
-        </div>
-      </div>
-  
-      <!-- Liens rapides -->
-      <div class="cdg-shortcuts">
-        <a href="https://layerdata.collibra.com/catalog/home" target="_blank">Catalogue</a>
-        <a href="https://layerdata.collibra.com/glossary" target="_blank">Glossaire</a>
-        <a href="https://layerdata.collibra.com/policy-manager" target="_blank">Politiques</a>
-        <a href="#" target="_blank">Workflows</a>
-      </div>
-  
-      <!-- FAQ -->
-      <div class="cdg-faq">
-        <h2>FAQ</h2>
-  
-        <div class="cdg-faq-category">
-          <h3>Gouvernance des données</h3>
-          <div class="cdg-faq-item">
-            <strong>Différence entre gouvernance et gestion ?</strong>
-            <p>La gouvernance établit les règles, la gestion les applique.</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portail Gouvernance des Données - TotalEnergies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e30613;
+      --secondary: #0058a6;
+      --bg: #f9f9f9;
+      --text: #1a1a1a;
+      --light: #ffffff;
+      --gray: #ccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg?rev=90e57401-4079-4b8d-9e2d-443b62bcb728&hash=F06F70A13F68B41EED47B1FDAC52242C') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color:white;
+      
+      
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      background: #c8000f;
+      
+    }
+
+    .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  z-index: 100;
+}
+
+.nav-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:root {
+  --main-red: #e30613;
+  --main-orange: #ff6a00;
+  --nav-bg: #f8f9fa; /* gris très clair */
+  --nav-text: #222;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 30px; /* moins haut */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  background: rgba(227, 6, 19, 0.08);
+  color: var(--main-red);
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--main-red), var(--main-orange));
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15);
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+}
+
+
+
+
+    section {
+      padding: 80px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: var(--primary);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .pillar {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .pillar img {
+      height: 60px;
+      margin-bottom: 16px;
+    }
+
+    #ressources {
+  background: #fff;
+  padding: 100px 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+#ressources h2 {
+  font-size: 36px;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 60px;
+}
+
+    .shortcuts {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 24px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .shortcuts a {
+  flex: 1 1 30%;
+  max-width: 32%;
+  background: linear-gradient(135deg, #e30613, #ff6a00);
+  color: white;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(227, 6, 19, 0.25), 0 4px 12px rgba(255, 106, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortcuts a::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6a00, #e30613);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 40px;
+  z-index: 0;
+}
+
+.shortcuts a:hover::before {
+  opacity: 1;
+}
+
+.shortcuts a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(227, 6, 19, 0.3), 0 6px 16px rgba(255, 106, 0, 0.3);
+}
+
+.shortcuts a {
+  position: relative;
+  z-index: 1;
+}
+
+
+    .faq-section {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f6fa 100%);
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #e30613;
+  font-size: 36px;
+  margin-bottom: 48px;
+  font-weight: 700;
+}
+
+.faq-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.faq-category {
+  position: relative;
+  background: #ffffffcc;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.faq-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6a00, #e30613);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.faq-category:hover {
+  transform: translateY(-3px);
+}
+
+.faq-category h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #0058a6, #00a3e0);
+
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.faq-item p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+
+
+.footer {
+  background: linear-gradient(135deg, #ffffff, #f2f6fa);
+  color: #1a1a1a;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0058a6, #e30613);
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-wrapper">
+          <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg" alt="TotalEnergies" class="logo">
           </div>
-          <div class="cdg-faq-item">
-            <strong>Rôles clés dans la gouvernance ?</strong>
-            <p>Data Owners, Stewards, IT, Sécurité, Métiers...</p>
+          <ul class="nav-menu">
+            <li><a href="#pillars">Nos Piliers</a></li>
+            <li><a href="#ressources">Ressources</a></li>
+            <li><a href="#collibra">Collibra</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="nav-right">
+            <a href="#ressources" class="cta-button">Explorer le catalogue</a>
           </div>
         </div>
-  
-        <div class="cdg-faq-category">
-          <h3>Plateforme Collibra</h3>
-          <div class="cdg-faq-item">
-            <strong>À quoi sert Collibra ?</strong>
-            <p>Documenter, tracer, gouverner les données stratégiques.</p>
-          </div>
-        </div>
+      </nav>
+      
+      
+      
+
+  <header>
+    <div class="hero-content">
+      <h1>Portail Gouvernance des Données</h1>
+      <p>Le hub stratégique pour explorer, comprendre et valoriser les données de TotalEnergies</p>
+      
+    </div>
+  </header>
+
+  <section id="pillars">
+    <h2>Nos piliers de gouvernance</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <img src="https://img.icons8.com/ios-filled/100/database.png" alt="Catalogue">
+        <h3>Catalogue de données</h3>
+        <p>Accès centralisé à toutes les données disponibles dans l'entreprise.</p>
       </div>
-  
-      <!-- Footer -->
-      <div class="cdg-footer">
-        &copy; 2025 TotalEnergies - Gouvernance des Données
+      <div class="pillar">
+        <img src="https://img.icons8.com/ios-filled/100/checklist.png" alt="Qualité">
+        <h3>Qualité des données</h3>
+        <p>Des jeux de données certifiés et constamment contrôlés.</p>
+      </div>
+      <div class="pillar">
+        <img src="https://img.icons8.com/ios-filled/100/user-group-man-man.png" alt="Roles">
+        <h3>Rôles & responsabilités</h3>
+        <p>Clarté des responsabilités avec les Data Owners et Stewards.</p>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="ressources">
+    <h2>Ressources Clés</h2>
+    <div class="shortcuts">
+      <a href="https://layerdata.collibra.com/catalog/home">Catalogue</a>
+      <a href="https://layerdata.collibra.com/glossary">Glossaire Métier</a>
+      <a href="https://layerdata.collibra.com/policy-manager">Politiques & Règles</a>
+      <a href="#">Workflows</a>
+    </div>
+  </section>
   
+
+  <section id="collibra">
+    <h2>Collibra chez TotalEnergies</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">Collibra est notre plateforme de gouvernance des données qui nous permet de documenter, gouverner, tracer et exploiter toutes les données stratégiques de l'entreprise.</p>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <h2 id="faq">Foire aux Questions (FAQ)</h2>
+    <div class="faq-container">
+  
+      <div class="faq-category">
+        <h3> Sur la gouvernance de données</h3>
+        <div class="faq-item">
+          <strong>Quelle est la différence entre gouvernance de données et gestion de données ?</strong>
+          <p>La gouvernance définit les règles et rôles, tandis que la gestion les applique au quotidien.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Quels sont les rôles clés dans un programme de gouvernance ?</strong>
+          <p>Data Owners, Stewards, Custodians, IT, Sécurité, et les équipes Métiers.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Comment la gouvernance de données améliore-t-elle la prise de décision ?</strong>
+          <p>En garantissant que les données sont fiables, bien définies et accessibles.</p>
+        </div>
+      </div>
+  
+      <div class="faq-category">
+        <h3> Sur l'utilisation de Collibra</h3>
+        <div class="faq-item">
+          <strong>À quoi sert Collibra au sein de TotalEnergies ?</strong>
+          <p>À centraliser les métadonnées, harmoniser les définitions, suivre la qualité des données.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Comment rechercher un actif ou un terme ?</strong>
+          <p>Utilisez la barre de recherche intelligente ou naviguez via les catégories.</p>
+        </div>
+      </div>
+  
+      
+  
+      <div class="faq-category">
+        <h3> Sur les politiques et la conformité</h3>
+        <div class="faq-item">
+          <strong>Comment Collibra aide-t-il à assurer la conformité (ex: RGPD) ?</strong>
+          <p>En centralisant les règles, en assurant la traçabilité et l’auditabilité des données.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Où consulter les politiques internes ?</strong>
+          <p>Depuis l’onglet “Politiques” ou la bibliothèque documentaire intégrée.</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 TotalEnergies - Gouvernance des Données</p>
+  </footer>
+
+</body>
+</html>

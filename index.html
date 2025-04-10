@@ -1,0 +1,191 @@
+<div style="font-family: Arial, sans-serif; color: #1a1a1a; background: #f9f9f9; padding: 20px; box-sizing: border-box; max-width: 100%; overflow-x: hidden; word-break: break-word;">
+    <style>
+      .cdg-container * {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+  
+      .cdg-container {
+        max-width: 100%;
+      }
+  
+      .cdg-container h2 {
+        font-size: 24px;
+        color: #e30613;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+  
+      .cdg-container p {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+  
+      .cdg-pillars {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        width: 100%;
+      }
+  
+      .cdg-pillar {
+        background: white;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        text-align: center;
+        word-wrap: break-word;
+      }
+  
+      .cdg-pillar img {
+        height: 50px;
+        margin-bottom: 10px;
+        max-width: 100%;
+      }
+  
+      .cdg-pillar h4 {
+        margin: 10px 0 5px;
+        font-size: 16px;
+        color: #333;
+      }
+  
+      .cdg-shortcuts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 30px;
+        width: 100%;
+      }
+  
+      .cdg-shortcuts a {
+        flex: 1 1 40%;
+        min-width: 120px;
+        text-align: center;
+        background: linear-gradient(135deg, #e30613, #ff6a00);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        word-wrap: break-word;
+      }
+  
+      .cdg-faq {
+        margin-top: 40px;
+      }
+  
+      .cdg-faq-category {
+        background: #fff;
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        margin-bottom: 20px;
+      }
+  
+      .cdg-faq-category h3 {
+        font-size: 18px;
+        color: #0058a6;
+        margin-bottom: 10px;
+      }
+  
+      .cdg-faq-item {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+  
+      .cdg-faq-item strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #000;
+      }
+  
+      .cdg-footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 12px;
+        color: #666;
+      }
+  
+      @media (max-width: 600px) {
+        .cdg-shortcuts a {
+          flex: 1 1 100%;
+        }
+  
+        .cdg-pillar {
+          padding: 12px;
+        }
+  
+        .cdg-container h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  
+    <div class="cdg-container">
+  
+      <!-- Titre -->
+      <h2>Portail Gouvernance des Données</h2>
+      <p>Explorez, comprenez et valorisez les données de TotalEnergies</p>
+  
+      <!-- Piliers -->
+      <div class="cdg-pillars">
+        <div class="cdg-pillar">
+          <img src="https://img.icons8.com/ios-filled/100/database.png" alt="Catalogue">
+          <h4>Catalogue</h4>
+          <p>Accès centralisé à toutes les données de l’entreprise.</p>
+        </div>
+        <div class="cdg-pillar">
+          <img src="https://img.icons8.com/ios-filled/100/checklist.png" alt="Qualité">
+          <h4>Qualité</h4>
+          <p>Données certifiées et surveillées en continu.</p>
+        </div>
+        <div class="cdg-pillar">
+          <img src="https://img.icons8.com/ios-filled/100/user-group-man-man.png" alt="Responsabilités">
+          <h4>Rôles</h4>
+          <p>Clarté des responsabilités avec les Data Owners et Stewards.</p>
+        </div>
+      </div>
+  
+      <!-- Liens rapides -->
+      <div class="cdg-shortcuts">
+        <a href="https://layerdata.collibra.com/catalog/home" target="_blank">Catalogue</a>
+        <a href="https://layerdata.collibra.com/glossary" target="_blank">Glossaire</a>
+        <a href="https://layerdata.collibra.com/policy-manager" target="_blank">Politiques</a>
+        <a href="#" target="_blank">Workflows</a>
+      </div>
+  
+      <!-- FAQ -->
+      <div class="cdg-faq">
+        <h2>FAQ</h2>
+  
+        <div class="cdg-faq-category">
+          <h3>Gouvernance des données</h3>
+          <div class="cdg-faq-item">
+            <strong>Différence entre gouvernance et gestion ?</strong>
+            <p>La gouvernance établit les règles, la gestion les applique.</p>
+          </div>
+          <div class="cdg-faq-item">
+            <strong>Rôles clés dans la gouvernance ?</strong>
+            <p>Data Owners, Stewards, IT, Sécurité, Métiers...</p>
+          </div>
+        </div>
+  
+        <div class="cdg-faq-category">
+          <h3>Plateforme Collibra</h3>
+          <div class="cdg-faq-item">
+            <strong>À quoi sert Collibra ?</strong>
+            <p>Documenter, tracer, gouverner les données stratégiques.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Footer -->
+      <div class="cdg-footer">
+        &copy; 2025 TotalEnergies - Gouvernance des Données
+      </div>
+    </div>
+  </div>
+  

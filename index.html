@@ -100,42 +100,21 @@
 
     /* ---------------------- Section Header / Hero ---------------------- */
     header {
-      background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg') center/cover no-repeat;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+  background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1;
-    }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
-    }
 
-    .hero-content h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
 
-    .hero-content p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+
+
+
+
+
 
     /* ---------------------- Section Piliers ---------------------- */
     section {
@@ -212,6 +191,43 @@
       max-width: 800px;
       margin: auto;
     }
+
+    .entites-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #f8f9fc, #eef1f6);
+}
+
+.entites-section h2 {
+  font-size: 32px;
+  color: #e30613;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.entites-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.entite {
+  background: white;
+  color: #1a1a1a;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entite:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
 
     /* ---------------------- Section FAQ ---------------------- */
     .faq-section {
@@ -297,8 +313,8 @@
   <!-- ---------------------- Header principal ---------------------- -->
   <header>
     <div class="hero-content">
-      <h1>Portail Gouvernance des Données</h1>
-      <p>Le hub stratégique pour explorer, comprendre et valoriser les données de TotalEnergies</p>
+      
+     
     </div>
   </header>
 
@@ -331,7 +347,7 @@
       <a href="https://layerdata.collibra.com/catalog/home">Catalogue</a>
       <a href="https://layerdata.collibra.com/glossary">Glossaire Métier</a>
       <a href="https://layerdata.collibra.com/policy-manager">Politiques & Règles</a>
-      <a href="#">Workflows</a>
+      <a href="#entites">Les entitées</a>
       <a href="https://layerdata.collibra.com/search?filters=advanced" target="_blank">Marketplace Avancé </a>
     </div>
   </section>
@@ -341,7 +357,21 @@
     <h2>Collibra chez TotalEnergies</h2>
     <p>Collibra est notre plateforme de gouvernance des données qui nous permet de documenter, gouverner, tracer et exploiter toutes les données stratégiques de l'entreprise.</p>
   </section>
-
+  <!-- ---------------------- Les entitées ---------------------- -->
+  <section id="entites" class="entites-section">
+    <h2>Les 7 entités</h2>
+    <div class="entites-list">
+      <div class="entite">MS</div>
+      <div class="entite">OT/EP</div>
+      <div class="entite">GRP</div>
+      <div class="entite">RC</div>
+      <div class="entite">TGHRS</div>
+      <div class="entite">TGITS</div>
+      <div class="entite">TS</div>
+    </div>
+  </section>
+  
+  
   <!-- ---------------------- Section FAQ ---------------------- -->
   <section class="faq-section" id="faq">
     <h2>Foire aux Questions (FAQ)</h2>

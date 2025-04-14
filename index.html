@@ -1,415 +1,212 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <!-- Informations de base -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portail Gouvernance des Données - TotalEnergies</title>
-  
-  <!-- Police Inter via Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Governance Landing Page</title>
 
-  <!-- Styles CSS internes -->
+  <!-- Importation de la police Inter depuis Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    /* ---------------------- Variables de couleur ---------------------- */
+    /* Définition des couleurs principales dans des variables CSS */
     :root {
       --primary: #e30613;
       --secondary: #0058a6;
       --bg: #f9f9f9;
-      --text: #1a1a1a;
-      --light: #ffffff;
-      --gray: #ccc;
-      --main-orange: #ff6a00;
-    }
-
-    /* ---------------------- Reset et base ---------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
+      margin: 0;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      color: #1a1a1a;
     }
 
-    /* ---------------------- Barre de navigation ---------------------- */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      z-index: 100;
-    }
-
-    .nav-wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      position: relative; /* Permet d’absolutiser le menu langue à l’intérieur */
     }
 
     .logo {
-      height: 32px;
+      width: 160px;
+      margin-bottom: 20px;
     }
 
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 24px;
-    }
-
-    .nav-menu li a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      font-size: 15px;
-      padding: 6px 10px;
-      border-radius: 20px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .nav-menu li a:hover {
-      background: rgba(227, 6, 19, 0.08);
+    h1 {
       color: var(--primary);
+      font-size: 28px;
     }
 
-    .cta-button {
-      background: linear-gradient(135deg, var(--primary), var(--main-orange));
-      color: white;
-      padding: 8px 20px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15);
+    /* Bloc pour le changement de langue */
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
-    .cta-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+    /* Boutons pour changer de langue */
+    .lang-switch button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      margin-left: 10px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    /* ---------------------- Section Header / Hero ---------------------- */
-    header {
-  background: url('https://www.ocu.org/-/media/ocu/images/home/tecnologia/antivirus/total_enerrgies_800x450.jpg') center/cover no-repeat;
-  height: 100vh;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-
-
-
-
-
-
-
-    /* ---------------------- Section Piliers ---------------------- */
-    section {
-      padding: 80px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
+    /* Paragraphe d’introduction */
+    .intro-text {
+      max-width: 900px;
+      margin: 40px auto;
+      font-size: 16px;
+      line-height: 1.7;
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
-      color: var(--primary);
+      padding: 0 20px;
     }
 
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .pillar {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-
-    .pillar img {
-      height: 60px;
-      margin-bottom: 16px;
-    }
-
-    /* ---------------------- Section Ressources Clés ---------------------- */
-    #ressources {
-      background: #fff;
-      padding: 100px 40px;
-      border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-      margin: 60px auto;
-    }
-
-    .shortcuts {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .shortcuts a {
-      flex: 1 1 30%;
-      max-width: 32%;
-      background: linear-gradient(135deg, #e30613, #ff6a00);
-      color: white;
-      padding: 16px 24px;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 40px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(227, 6, 19, 0.25);
-      transition: 0.3s ease;
-    }
-
-    .shortcuts a:hover {
-      transform: translateY(-4px);
-    }
-
-    /* ---------------------- Section Collibra ---------------------- */
-    #collibra p {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
+    .intro-text strong {
+      color: var(--secondary);
     }
 
     .entites-section {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(to right, #f8f9fc, #eef1f6);
-}
-
-.entites-section h2 {
-  font-size: 32px;
-  color: #e30613;
-  margin-bottom: 40px;
-  font-weight: 700;
-}
-
-.entites-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.entite {
-  background: white;
-  color: #1a1a1a;
-  padding: 20px 30px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.entite:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-
-    /* ---------------------- Section FAQ ---------------------- */
-    .faq-section {
-      padding: 80px 20px;
-      background: linear-gradient(180deg, #ffffff 0%, #f3f6fa 100%);
-    }
-
-    .faq-container {
-      max-width: 960px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    .faq-category {
-      background: #ffffffcc;
-      border-radius: 20px;
-      padding: 32px 28px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .faq-category h3 {
-      font-size: 22px;
-      font-weight: 600;
-      color: white;
-      background: linear-gradient(135deg, #0058a6, #00a3e0);
-      padding: 6px 16px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-
-    .faq-item strong {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    /* ---------------------- Pied de page ---------------------- */
-    .footer {
-      background: linear-gradient(135deg, #ffffff, #f2f6fa);
       text-align: center;
-      padding: 40px 20px;
-      font-size: 15px;
-      font-weight: 500;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
-      position: relative;
+      padding: 60px 20px;
+      background: #eef1f6;
     }
 
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(to right, #0058a6, #e30613);
-      border-radius: 6px;
+    .entites-section h2 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .entites-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* Style de chaque entité */
+    .entite {
+      background: white;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .entite:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <!-- ---------------------- Barre de navigation ---------------------- -->
-  <nav class="navbar">
-    <div class="nav-wrapper">
-      <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg" alt="TotalEnergies" class="logo">
-      <ul class="nav-menu">
-        <li><a href="#pillars">Nos Piliers</a></li>
-        <li><a href="#ressources">Ressources</a></li>
-        <li><a href="#collibra">Collibra</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <a href="#ressources" class="cta-button">Explorer le catalogue</a>
-    </div>
-  </nav>
-
-  <!-- ---------------------- Header principal ---------------------- -->
+  <!-- En-tête contenant le logo et le titre -->
   <header>
-    <div class="hero-content">
-      
-     
+    <img src="https://upload.wikimedia.org/wikipedia/fr/f/f7/Logo_TotalEnergies.svg" class="logo" alt="TotalEnergies logo"/>
+    <h1 id="title">Data Governance</h1>
+
+    <!-- Sélecteur de langue (boutons EN / FR) -->
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('fr')">FR</button>
     </div>
   </header>
 
-  <!-- ---------------------- Nos piliers ---------------------- -->
-  <section id="pillars">
-    <h2>Nos piliers de gouvernance</h2>
-    <div class="pillars">
-      <div class="pillar">
-        <img src="https://img.icons8.com/ios-filled/100/database.png" alt="Catalogue">
-        <h3>Catalogue de données</h3>
-        <p>Accès centralisé à toutes les données disponibles dans l'entreprise.</p>
-      </div>
-      <div class="pillar">
-        <img src="https://img.icons8.com/ios-filled/100/checklist.png" alt="Qualité">
-        <h3>Qualité des données</h3>
-        <p>Des jeux de données certifiés et constamment contrôlés.</p>
-      </div>
-      <div class="pillar">
-        <img src="https://img.icons8.com/ios-filled/100/user-group-man-man.png" alt="Roles">
-        <h3>Rôles & responsabilités</h3>
-        <p>Clarté des responsabilités avec les Data Owners et Stewards.</p>
-      </div>
-    </div>
-  </section>
+  <!-- Zone où le texte d’intro sera injecté dynamiquement -->
+  <div class="intro-text" id="introText">
+    <!-- Content injected dynamically -->
+  </div>
 
-  <!-- ---------------------- Raccourcis ressources clés ---------------------- -->
-  <section id="ressources">
-    <h2>Ressources Clés</h2>
-    <div class="shortcuts">
-      <a href="https://layerdata.collibra.com/catalog/home">Catalogue</a>
-      <a href="https://layerdata.collibra.com/glossary">Glossaire Métier</a>
-      <a href="https://layerdata.collibra.com/policy-manager">Politiques & Règles</a>
-      <a href="#entites">Les entitées</a>
-      <a href="https://layerdata.collibra.com/search?filters=advanced" target="_blank">Marketplace Avancé </a>
-    </div>
-  </section>
-
-  <!-- ---------------------- Description Collibra ---------------------- -->
-  <section id="collibra">
-    <h2>Collibra chez TotalEnergies</h2>
-    <p>Collibra est notre plateforme de gouvernance des données qui nous permet de documenter, gouverner, tracer et exploiter toutes les données stratégiques de l'entreprise.</p>
-  </section>
-  <!-- ---------------------- Les entitées ---------------------- -->
-  <section id="entites" class="entites-section">
-    <h2>Les 7 entités</h2>
+  <!-- Section listant les 7 entités -->
+  <section class="entites-section">
+    <h2 id="accessTitle">Access your entity</h2>
     <div class="entites-list">
-      <div class="entite">MS</div>
-      <div class="entite">OT/EP</div>
-      <div class="entite">GRP</div>
-      <div class="entite">RC</div>
-      <div class="entite">TGHRS</div>
-      <div class="entite">TGITS</div>
-      <div class="entite">TS</div>
-    </div>
-  </section>
-  
-  
-  <!-- ---------------------- Section FAQ ---------------------- -->
-  <section class="faq-section" id="faq">
-    <h2>Foire aux Questions (FAQ)</h2>
-    <div class="faq-container">
-
-      <!-- Catégorie 1 -->
-      <div class="faq-category">
-        <h3>Sur la gouvernance de données</h3>
-        <div class="faq-item">
-          <strong>Quelle est la différence entre gouvernance de données et gestion de données ?</strong>
-          <p>La gouvernance définit les règles et rôles, tandis que la gestion les applique au quotidien.</p>
-        </div>
-        <div class="faq-item">
-          <strong>Quels sont les rôles clés dans un programme de gouvernance ?</strong>
-          <p>Data Owners, Stewards, Custodians, IT, Sécurité, et les équipes Métiers.</p>
-        </div>
-      </div>
-
-      <!-- Catégorie 2 -->
-      <div class="faq-category">
-        <h3>Sur l'utilisation de Collibra</h3>
-        <div class="faq-item">
-          <strong>À quoi sert Collibra au sein de TotalEnergies ?</strong>
-          <p>À centraliser les métadonnées, harmoniser les définitions, suivre la qualité des données.</p>
-        </div>
-        <div class="faq-item">
-          <strong>Comment rechercher un actif ou un terme ?</strong>
-          <p>Utilisez la barre de recherche intelligente ou naviguez via les catégories.</p>
-        </div>
-      </div>
-
+      <a class="entite" href="#">MS</a>
+      <a class="entite" href="#">OT/EP</a>
+      <a class="entite" href="#">GRP</a>
+      <a class="entite" href="#">RC</a>
+      <a class="entite" href="#">TGHRS</a>
+      <a class="entite" href="#">TGITS</a>
+      <a class="entite" href="#">TS</a>
     </div>
   </section>
 
-  <!-- ---------------------- Pied de page ---------------------- -->
-  <footer class="footer">
-    <p>&copy; 2025 TotalEnergies - Gouvernance des Données</p>
+  <footer>
+    &copy; 2025 TotalEnergies - Data Governance
   </footer>
 
+  <!-- Script de gestion multilingue -->
+  <script>
+    // Objet contenant les traductions pour EN et FR
+    const translations = {
+      en: {
+        title: "Data Governance",
+        accessTitle: "Access your entity",
+        intro: `
+          <p><strong>Welcome to TotalEnergies’ new data governance platform.</strong></p>
+          <p>As part of our evolving data strategy, we’ve migrated our data governance environment from <strong>DataGalaxy</strong> to <strong>Collibra</strong>.</p>
+          <p>This new platform enables better centralization, stronger alignment with business processes, and an enhanced user experience.</p>
+          <p>You can now access your dedicated space through one of the 7 entities listed below.</p>
+        `
+      },
+      fr: {
+        title: "Gouvernance des Données",
+        accessTitle: "Accédez à votre entité",
+        intro: `
+          <p><strong>Bienvenue sur la nouvelle plateforme de gouvernance des données de TotalEnergies.</strong></p>
+          <p>Dans le cadre de l’évolution de notre stratégie data, nous avons migré notre environnement de gouvernance des données de <strong>DataGalaxy</strong> vers <strong>Collibra</strong>.</p>
+          <p>Cette nouvelle plateforme offre une meilleure centralisation, un alignement renforcé avec les processus métier, et une expérience utilisateur améliorée.</p>
+          <p>Vous pouvez dès maintenant accéder à votre espace dédié via l’une des 7 entités ci-dessous.</p>
+        `
+      }
+    };
+
+    /**
+     * Met à jour le contenu de la page selon la langue sélectionnée
+     * @param {string} lang - "en" ou "fr"
+     */
+    function setLanguage(lang) {
+      // Stocke la langue choisie dans le localStorage pour la conserver à la prochaine visite
+      localStorage.setItem('lang', lang);
+
+      // Met à jour dynamiquement le contenu du titre, du paragraphe et du sous-titre des entités
+      document.getElementById('title').innerText = translations[lang].title;
+      document.getElementById('introText').innerHTML = translations[lang].intro;
+      document.getElementById('accessTitle').innerText = translations[lang].accessTitle;
+    }
+
+    /**
+     * Détecte la langue du navigateur ou celle précédemment choisie
+     * Appelée au chargement de la page
+     */
+    function detectLanguage() {
+      const savedLang = localStorage.getItem('lang'); // langue enregistrée précédemment
+      const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en'; // détection automatique
+      const lang = savedLang || browserLang; // priorité à celle enregistrée
+      setLanguage(lang);
+    }
+
+    // Exécute la détection de langue dès que la page est chargée
+    window.onload = detectLanguage;
+  </script>
 </body>
 </html>
